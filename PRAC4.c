@@ -33,7 +33,7 @@
 #define ACK	10
 #define NAK	11
 
- ControladorPID PID;
+ ControladorPID PID, newPID;
  
 int L7_callBackCOM(void* RxData);
 INFO L7_RxCOM;
@@ -118,7 +118,7 @@ while(1)
 			L7_TxCOM.command=status;             //ACK/NAK
 			L7_TxCOM.size=0;             		 //tamano de datos
 		if((error=L7_sendMessage(&L7_TxCOM))!=0) //envio
-				continue;	//errror
+				continue;	//error
 			break;
 			}
 		case 3: //get velocity
@@ -132,7 +132,7 @@ while(1)
 			L7_TxCOM.data=(u_char*)&velocity;      //Dato
 			L7_TxCOM.size=sizeof(int);             //tamano de datos
 			if((error=L7_sendMessage(&L7_TxCOM))!=0) //envio
-				continue;	//errror
+				continue;	//error
 			break; 
 			}
 		case 4:	//get position
@@ -146,7 +146,7 @@ while(1)
 			L7_TxCOM.data=(u_char*)&position;      //Dato
 			L7_TxCOM.size=sizeof(long);            //tamano de datos
 			if((error=L7_sendMessage(&L7_TxCOM))!=0) //envio
-				continue;	//errror
+				continue;	//error
 			break;
 			}
         
@@ -162,25 +162,11 @@ while(1)
 			L7_TxCOM.command=status;              //ACK/NAK
 			L7_TxCOM.size=0;             		  //tamano de datos
 			if((error=L7_sendMessage(&L7_TxCOM))!=0) //envio
-				continue;	//errror
-			break;
-			}
-        
-            case 6:	//set PID
-			{
-			
-                
-
-			//Envio de ACK
-			L7_TxCOM.destinationNode=0;          //nodo master
-			L7_TxCOM.command=status;             //ACK/NAK
-			L7_TxCOM.size=0;             		 //tamano de datos
-		if((error=L7_sendMessage(&L7_TxCOM))!=0) //envio
 				continue;	//error
 			break;
 			}
             
-            case 7:	//set tipus control
+        case 6:	//set tipus control
 			{
             u_char tc;
             tc=*(u_char*)L7_RxCOM.data;
@@ -191,12 +177,12 @@ while(1)
 			L7_TxCOM.destinationNode=0;          //nodo master
 			L7_TxCOM.command=status;             //ACK/NAK
 			L7_TxCOM.size=0;             		 //tamano de datos
-		if((error=L7_sendMessage(&L7_TxCOM))!=0) //envio
-				continue;	//errror
+            if((error=L7_sendMessage(&L7_TxCOM))!=0) //envio
+				continue;	//error
 			break;
 			}
             
-            case 8:	//set consigna
+        case 7:	//set consigna
 			{
             long cons;
 			cons=*(long*)L7_RxCOM.data;
@@ -207,18 +193,68 @@ while(1)
 			L7_TxCOM.destinationNode=0;          //nodo master
 			L7_TxCOM.command=status;             //ACK/NAK
 			L7_TxCOM.size=0;             		 //tamano de datos
-		if((error=L7_sendMessage(&L7_TxCOM))!=0) //envio
-				continue;	//errror
+            if((error=L7_sendMessage(&L7_TxCOM))!=0) //envio
+				continue;	//error
 			break;
 			}
+         
+        case 8:	//set P
+			{
+            float constant;
+			constant=*(float*)L7_RxCOM.data;
+            if(setConstants(1,constant)){
+                status=NAK;
+            }
             
+			//Envio de ACK
+			L7_TxCOM.destinationNode=0;          //nodo master
+			L7_TxCOM.command=status;             //ACK/NAK
+			L7_TxCOM.size=0;             		 //tamano de datos
+		if((error=L7_sendMessage(&L7_TxCOM))!=0) //envio
+				continue;	//error
+			break;
+			}
+        
+        case 9:  //set I
+            {
+            float constant;
+			constant=*(float*)L7_RxCOM.data;
+            if(setConstants(2,constant)){
+                status=NAK;
+            }
+            
+            //Envio de ACK
+			L7_TxCOM.destinationNode=0;          //nodo master
+			L7_TxCOM.command=status;             //ACK/NAK
+			L7_TxCOM.size=0;             		 //tamano de datos
+            if((error=L7_sendMessage(&L7_TxCOM))!=0) //envio
+			continue;	//error
+            break;    
+            }
+        
+        case 10:  //set D
+            {
+            float constant;
+			constant=*(float*)L7_RxCOM.data;
+            if(setConstants(3,constant)){
+                status=NAK;
+            }
+            //Envio de ACK
+			L7_TxCOM.destinationNode=0;          //nodo master
+			L7_TxCOM.command=status;             //ACK/NAK
+			L7_TxCOM.size=0;             		 //tamano de datos
+            if((error=L7_sendMessage(&L7_TxCOM))!=0) //envio
+			continue;	//error
+            break;   
+            }
+        
 		default:
 			//Envio de NO ACEPTACION
 			L7_TxCOM.destinationNode=0;           //nodo master
 			L7_TxCOM.command=NAK;                 //NAK
 			L7_TxCOM.size=0;             		 //tamano de datos
 			if((error=L7_sendMessage(&L7_TxCOM))!=0) //envio
-				continue;	//errror
+			continue;	//error
 			break;
 		}
 	}  

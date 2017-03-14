@@ -148,8 +148,7 @@ motorInfo.velocity=(60.0/(ENCODER*4))*(motorInfo.partialEncoderCount/motorInfo.t
 motorInfo.partialEncoderCount=0;
 motorInfo.timerCount++;	//timer
 
-
-
+controlPID();
 
 IFS1bits.T4IF=0; 	//clear the interrupt flag
 }
