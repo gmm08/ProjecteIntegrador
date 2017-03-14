@@ -182,9 +182,9 @@ while(1)
             
             case 7:	//set tipus control
 			{
-			
-             tipuscontrol=*(u_char*)L7_RxCOM.data;
-			if(0/*que posem aqui?*/) status=NAK;
+            u_char tc;
+            tc=*(u_char*)L7_RxCOM.data;
+			if(setTipusControl(tc)) status=NAK;
                 
 
 			//Envio de ACK
