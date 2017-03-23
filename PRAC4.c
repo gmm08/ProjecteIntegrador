@@ -186,8 +186,9 @@ while(1)
             
         case 7:	//set consigna
 			{
-            long cons;
-			cons=*(long*)L7_RxCOM.data;
+            float cons;
+			cons=*(float*)L7_RxCOM.data;
+          //  cons=cons/10;
 			if(setConsigna(cons)) status=NAK;
 			                
 
@@ -252,6 +253,7 @@ while(1)
         
         case 11:
         {
+            errorResetPID();
             ActualitzarPID();
             break;
         }

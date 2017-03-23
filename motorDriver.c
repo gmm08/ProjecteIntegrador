@@ -341,7 +341,7 @@ return status;
 int MOTOR_setDC(char dc)
 {
 int status=0;
-if(dc<0) {dc*=-1; motorInfo.direction=1;}
+if(dc<0) {dc*= -1; motorInfo.direction=1;}
 else motorInfo.direction=0;
 if(dc>100) {
 	dc=100; //saturación

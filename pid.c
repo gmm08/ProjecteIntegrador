@@ -7,7 +7,7 @@ ControladorPID PID, newPID;
 
 float errActual, errAnterior, P_err, I_err, D_err;
 
-int setConsigna(long cons)
+int setConsigna(float cons)
 {
 int status=0;
 newPID.consigna=cons;
@@ -84,6 +84,15 @@ void ActualitzarPID()
    
 }
 
+void errorResetPID()
+{
+    P_err = 0;
+    I_err = 0;
+    D_err = 0;
+    errActual = 0;
+    errAnterior = 0;
+    
+}
 
 void controlPID()
 {
@@ -123,7 +132,8 @@ void controlPID()
     D_err = errActual - errAnterior;
     
     float dc = PID.P*P_err + PID.I*I_err + PID.D*D_err;
+    int x = (int)dc; 
     
-    MOTOR_setDC((char) dc);
+    MOTOR_setDC((char) x);
     
 }

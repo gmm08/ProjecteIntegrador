@@ -27,10 +27,11 @@ float
 
 
 
-int setConsigna(long cons);
+int setConsigna(float cons);
 int setTipusControl(unsigned char tcon);
 int setConstants(unsigned char s, float k);
 void ActualitzarPID();
+void errorResetPID();
 void controlPID();
 
 
