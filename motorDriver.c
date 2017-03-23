@@ -4,10 +4,12 @@
 
 #include <p24fj128ga010.h>
 #include "motorDriver.h"
+//#include "pid.h"
 
 typedef unsigned char 	u_char;    	
 typedef unsigned int 	u_int;
 typedef unsigned long 	u_long;
+
 
 
 MOTOR_INFO motorInfo;

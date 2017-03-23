@@ -29,11 +29,13 @@
 #include <stdlib.h>
 #include "rs232.h"
 #include "motorDriver.h"
+#include "pid.h"
 
 #define ACK	10
 #define NAK	11
 
- ControladorPID PID, newPID;
+
+
  
 int L7_callBackCOM(void* RxData);
 INFO L7_RxCOM;
@@ -247,6 +249,12 @@ while(1)
 			continue;	//error
             break;   
             }
+        
+        case 11:
+        {
+            ActualitzarPID();
+            break;
+        }
         
 		default:
 			//Envio de NO ACEPTACION

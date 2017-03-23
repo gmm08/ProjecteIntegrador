@@ -5,8 +5,10 @@
         <group>
             <file>file:/C:/Users/user/Desktop/Pintegrador/Pi.X/pid.h</file>
             <file>file:/C:/Users/user/Desktop/Pintegrador/Pi.X/motorDriver.h</file>
+            <file>file:/C:/Users/user/Desktop/Pintegrador/Pi.X/RS232.H</file>
             <file>file:/C:/Users/user/Desktop/Pintegrador/Pi.X/PRAC4.c</file>
             <file>file:/C:/Users/user/Desktop/Pintegrador/Pi.X/motorDriver.c</file>
+            <file>file:/C:/Users/user/Desktop/Pintegrador/Pi.X/RS232.C</file>
             <file>file:/C:/Users/user/Desktop/Pintegrador/Pi.X/pid.c</file>
         </group>
     </open-files>

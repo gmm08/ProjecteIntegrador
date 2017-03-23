@@ -8,6 +8,8 @@
 #define ENCODER	200			//pulsos por revolución
 #define Tcy 0.25e-6			//ciclo instrucción en us (4 MHz)
 
+
+
 typedef struct {
 float 	velocity, 	//velocidad del motor
 		position; 	//posición del motor
@@ -24,6 +26,7 @@ float 	tsample;	//intervalo para determinar la velocidad (s)
 unsigned char
 		statusOld;	//estado anterior del encoder
 }MOTOR_INFO;		//estructura para el controlador
+
 
 void MOTOR_openDriver(unsigned int frec, float tsample); //inicializa el controlador(frec (Hz), tsample (s))
 void MOTOR_closeDriver(); 				//termina el controlador

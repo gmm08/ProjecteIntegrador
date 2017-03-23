@@ -8,9 +8,10 @@
 #ifndef PID_H
 #define	PID_H
 
-typedef struct
-{
-u_char 
+
+
+typedef struct {
+unsigned char 
 	tipuscontrol;	 //0=sense control, 1=velocitat, 2=posicio 		
 
 float
@@ -22,7 +23,16 @@ float
 
 }ControladorPID;
 
-float errActual, errAnterior, P_err, I_err, D_err;
+ 
+
+
+
+int setConsigna(long cons);
+int setTipusControl(unsigned char tcon);
+int setConstants(unsigned char s, float k);
+void ActualitzarPID();
+void controlPID();
+
 
 #endif	/* PID_H */
 
