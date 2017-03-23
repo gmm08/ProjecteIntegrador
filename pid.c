@@ -100,6 +100,7 @@ void controlPID()
         
         case 1:
         {
+              
             errActual = PID.consigna - MOTOR_getVelocity();
             break;
         }

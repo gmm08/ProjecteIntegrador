@@ -149,7 +149,8 @@ void __attribute__((__interrupt__)) _T4Interrupt(void)
 motorInfo.velocity=(60.0/(ENCODER*4))*(motorInfo.partialEncoderCount/motorInfo.tsample); 
 motorInfo.partialEncoderCount=0;
 motorInfo.timerCount++;	//timer
-
+motorInfo.position =  MOTOR_getPosition();
+motorInfo.velocity =  MOTOR_getVelocity();
 controlPID();
 
 IFS1bits.T4IF=0; 	//clear the interrupt flag
@@ -301,7 +302,8 @@ MOTOR_endVelocity();
 //////////////////////////////////////
 float MOTOR_getVelocity()
 {
-return motorInfo.velocity;
+
+    return motorInfo.velocity;
 }
 
 //retorna la posicion en grados

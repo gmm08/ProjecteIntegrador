@@ -1,4 +1,4 @@
-Microchip Technology Inc, vv3_30 (B) `
+Microchip Technology Inc, vv3_30 (B) ¨
 
 Tool Name:
   c:\program files (x86)\microchip\mplab c30\bin\bin\..\bin/pic30-coff-ld.exe
@@ -90,10 +90,10 @@ Program Memory  [Origin = 0x200, Length = 0x155fa]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x5d8           0x8c4  (2244)
-.text                        0x7d8              0x11c4          0x1aa6  (6822)
-.dinit                      0x199c                0x26            0x39  (57)
+.text                        0x7d8              0x11d0          0x1ab8  (6840)
+.dinit                      0x19a8                0x26            0x39  (57)
 
-                     Total program memory used (bytes):         0x23a3  (9123) 6%
+                     Total program memory used (bytes):         0x23b5  (9141) 6%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
@@ -224,35 +224,35 @@ External Symbols in Program Memory (by address):
                   0x001076                  __INT3Interrupt
                   0x00109c                  _MOTOR_encoderAttn
                   0x0011ee                  __T4Interrupt
-                  0x001236                  _MOTOR_openDriver
-                  0x001260                  _MOTOR_closeDriver
-                  0x00126a                  _MOTOR_iniPWM
-                  0x0012d0                  _MOTOR_endPWM
-                  0x0012ea                  _MOTOR_iniVelocity
-                  0x001312                  _MOTOR_endVelocity
-                  0x00131c                  _MOTOR_iniEncoder
-                  0x00136e                  _MOTOR_endEncoder
-                  0x001378                  _MOTOR_getVelocity
-                  0x001382                  _MOTOR_getPosition
-                  0x00139a                  _MOTOR_setFpwm
-                  0x001408                  _MOTOR_setDC
-                  0x0014aa                  _MOTOR_setTsample
-                  0x0014fe                  _MOTOR_getInfo
-                  0x001548                  _MOTOR_getTime
-                  0x001570                  _MOTOR_resetTime
-                  0x00157a                  _main
-                  0x0017fe                  _L7_callBackCOM
-                  0x001840                  _setConsigna
-                  0x00185a                  _setTipusControl
-                  0x001898                  _setConstants
-                  0x0018e6                  _ActualitzarPID
-                  0x0018f4                  _controlPID
+                  0x001242                  _MOTOR_openDriver
+                  0x00126c                  _MOTOR_closeDriver
+                  0x001276                  _MOTOR_iniPWM
+                  0x0012dc                  _MOTOR_endPWM
+                  0x0012f6                  _MOTOR_iniVelocity
+                  0x00131e                  _MOTOR_endVelocity
+                  0x001328                  _MOTOR_iniEncoder
+                  0x00137a                  _MOTOR_endEncoder
+                  0x001384                  _MOTOR_getVelocity
+                  0x00138e                  _MOTOR_getPosition
+                  0x0013a6                  _MOTOR_setFpwm
+                  0x001414                  _MOTOR_setDC
+                  0x0014b6                  _MOTOR_setTsample
+                  0x00150a                  _MOTOR_getInfo
+                  0x001554                  _MOTOR_getTime
+                  0x00157c                  _MOTOR_resetTime
+                  0x001586                  _main
+                  0x00180a                  _L7_callBackCOM
+                  0x00184c                  _setConsigna
+                  0x001866                  _setTipusControl
+                  0x0018a4                  _setConstants
+                  0x0018f2                  _ActualitzarPID
+                  0x001900                  _controlPID
                   0x0157fc                  _CONFIG2
                   0x0157fe                  _CONFIG1
 
 External Symbols in Program Memory (by name):
 
-                  0x0018e6                  _ActualitzarPID
+                  0x0018f2                  _ActualitzarPID
                   0x0157fe                  _CONFIG1
                   0x0157fc                  _CONFIG2
                   0x000eec                  _L2mac_binToStr
@@ -270,29 +270,29 @@ External Symbols in Program Memory (by name):
                   0x000954                  _L2mac_sentByteFG
                   0x000fd2                  _L2mac_setCallBack
                   0x000f46                  _L2mac_strToBin
-                  0x0017fe                  _L7_callBackCOM
+                  0x00180a                  _L7_callBackCOM
                   0x000dfe                  _L7_getInfoFromDataField
                   0x000cfc                  _L7_makeDataField
                   0x000b4e                  _L7_sendMessage
-                  0x001260                  _MOTOR_closeDriver
+                  0x00126c                  _MOTOR_closeDriver
                   0x00109c                  _MOTOR_encoderAttn
-                  0x00136e                  _MOTOR_endEncoder
-                  0x0012d0                  _MOTOR_endPWM
-                  0x001312                  _MOTOR_endVelocity
-                  0x0014fe                  _MOTOR_getInfo
-                  0x001382                  _MOTOR_getPosition
-                  0x001548                  _MOTOR_getTime
-                  0x001378                  _MOTOR_getVelocity
-                  0x00131c                  _MOTOR_iniEncoder
-                  0x00126a                  _MOTOR_iniPWM
-                  0x0012ea                  _MOTOR_iniVelocity
-                  0x001236                  _MOTOR_openDriver
+                  0x00137a                  _MOTOR_endEncoder
+                  0x0012dc                  _MOTOR_endPWM
+                  0x00131e                  _MOTOR_endVelocity
+                  0x00150a                  _MOTOR_getInfo
+                  0x00138e                  _MOTOR_getPosition
+                  0x001554                  _MOTOR_getTime
+                  0x001384                  _MOTOR_getVelocity
+                  0x001328                  _MOTOR_iniEncoder
+                  0x001276                  _MOTOR_iniPWM
+                  0x0012f6                  _MOTOR_iniVelocity
+                  0x001242                  _MOTOR_openDriver
                   0x001066                  _MOTOR_pwmShapeDown
                   0x001012                  _MOTOR_pwmShapeUp
-                  0x001570                  _MOTOR_resetTime
-                  0x001408                  _MOTOR_setDC
-                  0x00139a                  _MOTOR_setFpwm
-                  0x0014aa                  _MOTOR_setTsample
+                  0x00157c                  _MOTOR_resetTime
+                  0x001414                  _MOTOR_setDC
+                  0x0013a6                  _MOTOR_setFpwm
+                  0x0014b6                  _MOTOR_setTsample
                   0x000298                  __DefaultInterrupt
                   0x001076                  __INT3Interrupt
                   0x001042                  __OC1Interrupt
@@ -324,15 +324,15 @@ External Symbols in Program Memory (by name):
                   0x000222                  __psv_init
                   0x000200                  __resetPRI
                   0x000864                  _closeCOM
-                  0x0018f4                  _controlPID
+                  0x001900                  _controlPID
                   0x000764                  _free
-                  0x00157a                  _main
+                  0x001586                  _main
                   0x000640                  _malloc
                   0x0007ca                  _memcpy
                   0x000770                  _realloc
-                  0x001840                  _setConsigna
-                  0x001898                  _setConstants
-                  0x00185a                  _setTipusControl
+                  0x00184c                  _setConsigna
+                  0x0018a4                  _setConstants
+                  0x001866                  _setTipusControl
 
 Memory Configuration
 
@@ -1417,7 +1417,7 @@ _0379f8c058d3ba9e
                   0x0157fe          0x2 build/default/debug/PRAC4.o
                   0x0157fe                  CONFIG1
 
-.text             0x0007d8       0x11c4
+.text             0x0007d8       0x11d0
  .text            0x0007d8        0x816 build/default/debug/RS232.o
                   0x0007d8                  _U2RXInterrupt
                   0x00083c                  _U2TXInterrupt
@@ -1440,7 +1440,7 @@ _0379f8c058d3ba9e
                   0x000fc2                  L2mac_getRxData
                   0x000fca                  L2mac_getTxData
                   0x000fd2                  L2mac_setCallBack
- .text            0x000fee        0x58c build/default/debug/motorDriver.o
+ .text            0x000fee        0x598 build/default/debug/motorDriver.o
                   0x000fee                  _T2Interrupt
                   0x001012                  MOTOR_pwmShapeUp
                   0x001042                  _OC1Interrupt
@@ -1448,31 +1448,31 @@ _0379f8c058d3ba9e
                   0x001076                  _INT3Interrupt
                   0x00109c                  MOTOR_encoderAttn
                   0x0011ee                  _T4Interrupt
-                  0x001236                  MOTOR_openDriver
-                  0x001260                  MOTOR_closeDriver
-                  0x00126a                  MOTOR_iniPWM
-                  0x0012d0                  MOTOR_endPWM
-                  0x0012ea                  MOTOR_iniVelocity
-                  0x001312                  MOTOR_endVelocity
-                  0x00131c                  MOTOR_iniEncoder
-                  0x00136e                  MOTOR_endEncoder
-                  0x001378                  MOTOR_getVelocity
-                  0x001382                  MOTOR_getPosition
-                  0x00139a                  MOTOR_setFpwm
-                  0x001408                  MOTOR_setDC
-                  0x0014aa                  MOTOR_setTsample
-                  0x0014fe                  MOTOR_getInfo
-                  0x001548                  MOTOR_getTime
-                  0x001570                  MOTOR_resetTime
- .text            0x00157a        0x2c6 build/default/debug/PRAC4.o
-                  0x00157a                  main
-                  0x0017fe                  L7_callBackCOM
- .text            0x001840        0x15c build/default/debug/pid.o
-                  0x001840                  setConsigna
-                  0x00185a                  setTipusControl
-                  0x001898                  setConstants
-                  0x0018e6                  ActualitzarPID
-                  0x0018f4                  controlPID
+                  0x001242                  MOTOR_openDriver
+                  0x00126c                  MOTOR_closeDriver
+                  0x001276                  MOTOR_iniPWM
+                  0x0012dc                  MOTOR_endPWM
+                  0x0012f6                  MOTOR_iniVelocity
+                  0x00131e                  MOTOR_endVelocity
+                  0x001328                  MOTOR_iniEncoder
+                  0x00137a                  MOTOR_endEncoder
+                  0x001384                  MOTOR_getVelocity
+                  0x00138e                  MOTOR_getPosition
+                  0x0013a6                  MOTOR_setFpwm
+                  0x001414                  MOTOR_setDC
+                  0x0014b6                  MOTOR_setTsample
+                  0x00150a                  MOTOR_getInfo
+                  0x001554                  MOTOR_getTime
+                  0x00157c                  MOTOR_resetTime
+ .text            0x001586        0x2c6 build/default/debug/PRAC4.o
+                  0x001586                  main
+                  0x00180a                  L7_callBackCOM
+ .text            0x00184c        0x15c build/default/debug/pid.o
+                  0x00184c                  setConsigna
+                  0x001866                  setTipusControl
+                  0x0018a4                  setConstants
+                  0x0018f2                  ActualitzarPID
+                  0x001900                  controlPID
 
-.dinit            0x00199c         0x26
- .dinit           0x00199c         0x26 data_init
+.dinit            0x0019a8         0x26
+ .dinit           0x0019a8         0x26 data_init
