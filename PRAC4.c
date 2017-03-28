@@ -113,7 +113,7 @@ while(1)
 			char dc;
 			dc=*(char*)L7_RxCOM.data;
 			if(MOTOR_setDC(dc)) status=NAK;
-			PORTA=dc;
+			//PORTA=dc;
 
 			//Envio de ACK
 			L7_TxCOM.destinationNode=0;          //nodo master

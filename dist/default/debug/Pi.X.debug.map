@@ -1,4 +1,4 @@
-Microchip Technology Inc, vv3_30 (B) 5
+Microchip Technology Inc, vv3_30 (B) Y
 
 Tool Name:
   c:\program files (x86)\microchip\mplab c30\bin\bin\..\bin/pic30-coff-ld.exe
@@ -90,10 +90,10 @@ Program Memory  [Origin = 0x200, Length = 0x155fa]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x5d8           0x8c4  (2244)
-.text                        0x7d8              0x11fc          0x1afa  (6906)
-.dinit                      0x19d4                0x26            0x39  (57)
+.text                        0x7d8              0x1236          0x1b51  (6993)
+.dinit                      0x1a0e                0x26            0x39  (57)
 
-                     Total program memory used (bytes):         0x23f7  (9207) 7%
+                     Total program memory used (bytes):         0x244e  (9294) 7%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
@@ -101,21 +101,21 @@ Data Memory  [Origin = 0x800, Length = 0x2000]
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
 .icd                         0x800                0x50            0x50  (80)
-.nbss                        0x850                   0            0x84  (132)
-.bss                         0x8d4                   0            0x12  (18)
-.heap                        0x8e6                   0           0x200  (512)
+.nbss                        0x850                   0            0xa2  (162)
+.bss                         0x8f2                   0            0x12  (18)
+.heap                        0x904                   0           0x200  (512)
 
-                        Total data memory used (bytes):          0x2e6  (742) 9%
+                        Total data memory used (bytes):          0x304  (772) 9%
 
 
 Dynamic Memory Usage
 
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
-heap                         0x8e6                               0x200  (512)
-stack                        0xae6                              0x1d1a  (7450)
+heap                         0x904                               0x200  (512)
+stack                        0xb04                              0x1cfc  (7420)
 
-                        Maximum dynamic memory (bytes):         0x1f1a  (7962)
+                        Maximum dynamic memory (bytes):         0x1efc  (7932)
 
 
 External Symbols in Data Memory (by address):
@@ -127,44 +127,46 @@ External Symbols in Data Memory (by address):
                     0x087c                  _P_err
                     0x0880                  _I_err
                     0x0884                  _D_err
-                    0x0888                  _nodeNumber
-                    0x088a                  _RxData
-                    0x0898                  _TxData
-                    0x08a6                  _pTxData
-                    0x08a8                  _ordenation
-                    0x08aa                  _COM_error
-                    0x08ac                  _test
-                    0x08ae                  _motorInfo
-                    0x08cc                  _L7_RxCOM
-                    0x08d4                  __allocx
-                    0x08d8                  __alloct
-                    0x08da                  __allocp
-                    0x08dc                  __allocs
-                    0x08e4                  ___curbrk
+                    0x0888                  _Motor
+                    0x08a6                  _nodeNumber
+                    0x08a8                  _RxData
+                    0x08b6                  _TxData
+                    0x08c4                  _pTxData
+                    0x08c6                  _ordenation
+                    0x08c8                  _COM_error
+                    0x08ca                  _test
+                    0x08cc                  _motorInfo
+                    0x08ea                  _L7_RxCOM
+                    0x08f2                  __allocx
+                    0x08f6                  __alloct
+                    0x08f8                  __allocp
+                    0x08fa                  __allocs
+                    0x0902                  ___curbrk
 
 External Symbols in Data Memory (by name):
 
-                    0x08aa                  _COM_error
+                    0x08c8                  _COM_error
                     0x0884                  _D_err
                     0x0880                  _I_err
-                    0x08cc                  _L7_RxCOM
+                    0x08ea                  _L7_RxCOM
+                    0x0888                  _Motor
                     0x0850                  _PID
                     0x087c                  _P_err
-                    0x088a                  _RxData
-                    0x0898                  _TxData
-                    0x08e4                  ___curbrk
-                    0x08da                  __allocp
-                    0x08dc                  __allocs
-                    0x08d8                  __alloct
-                    0x08d4                  __allocx
+                    0x08a8                  _RxData
+                    0x08b6                  _TxData
+                    0x0902                  ___curbrk
+                    0x08f8                  __allocp
+                    0x08fa                  __allocs
+                    0x08f6                  __alloct
+                    0x08f2                  __allocx
                     0x0874                  _errActual
                     0x0878                  _errAnterior
-                    0x08ae                  _motorInfo
+                    0x08cc                  _motorInfo
                     0x0862                  _newPID
-                    0x0888                  _nodeNumber
-                    0x08a8                  _ordenation
-                    0x08a6                  _pTxData
-                    0x08ac                  _test
+                    0x08a6                  _nodeNumber
+                    0x08c6                  _ordenation
+                    0x08c4                  _pTxData
+                    0x08ca                  _test
 
 External Symbols in Program Memory (by address):
 
@@ -236,18 +238,18 @@ External Symbols in Program Memory (by address):
                   0x00138e                  _MOTOR_getPosition
                   0x0013a6                  _MOTOR_setFpwm
                   0x001414                  _MOTOR_setDC
-                  0x0014b6                  _MOTOR_setTsample
-                  0x00150a                  _MOTOR_getInfo
-                  0x001554                  _MOTOR_getTime
-                  0x00157c                  _MOTOR_resetTime
-                  0x001586                  _main
+                  0x0014bc                  _MOTOR_setTsample
+                  0x001510                  _MOTOR_getInfo
+                  0x00155a                  _MOTOR_getTime
+                  0x001582                  _MOTOR_resetTime
+                  0x00158c                  _main
                   0x00180c                  _L7_callBackCOM
                   0x00184e                  _setConsigna
                   0x001866                  _setTipusControl
                   0x0018a4                  _setConstants
                   0x0018f2                  _ActualitzarPID
-                  0x001900                  _errorResetPID
-                  0x001924                  _controlPID
+                  0x00191a                  _errorResetPID
+                  0x00193e                  _controlPID
                   0x0157fc                  _CONFIG2
                   0x0157fe                  _CONFIG1
 
@@ -280,9 +282,9 @@ External Symbols in Program Memory (by name):
                   0x00137a                  _MOTOR_endEncoder
                   0x0012dc                  _MOTOR_endPWM
                   0x00131e                  _MOTOR_endVelocity
-                  0x00150a                  _MOTOR_getInfo
+                  0x001510                  _MOTOR_getInfo
                   0x00138e                  _MOTOR_getPosition
-                  0x001554                  _MOTOR_getTime
+                  0x00155a                  _MOTOR_getTime
                   0x001384                  _MOTOR_getVelocity
                   0x001328                  _MOTOR_iniEncoder
                   0x001276                  _MOTOR_iniPWM
@@ -290,10 +292,10 @@ External Symbols in Program Memory (by name):
                   0x001242                  _MOTOR_openDriver
                   0x001066                  _MOTOR_pwmShapeDown
                   0x001012                  _MOTOR_pwmShapeUp
-                  0x00157c                  _MOTOR_resetTime
+                  0x001582                  _MOTOR_resetTime
                   0x001414                  _MOTOR_setDC
                   0x0013a6                  _MOTOR_setFpwm
-                  0x0014b6                  _MOTOR_setTsample
+                  0x0014bc                  _MOTOR_setTsample
                   0x000298                  __DefaultInterrupt
                   0x001076                  __INT3Interrupt
                   0x001042                  __OC1Interrupt
@@ -325,10 +327,10 @@ External Symbols in Program Memory (by name):
                   0x000222                  __psv_init
                   0x000200                  __resetPRI
                   0x000864                  _closeCOM
-                  0x001924                  _controlPID
-                  0x001900                  _errorResetPID
+                  0x00193e                  _controlPID
+                  0x00191a                  _errorResetPID
                   0x000764                  _free
-                  0x001586                  _main
+                  0x00158c                  _main
                   0x000640                  _malloc
                   0x0007ca                  _memcpy
                   0x000770                  _realloc
@@ -1373,8 +1375,8 @@ __c30_signature
  __c30_signature
                   0x000084          0x6 c:/program files (x86)/microchip/mplab c30/bin/bin/../../lib\libpic30-coff.a(brk.o)
 
-.nbss               0x0850         0x84
- .nbss              0x0850         0x38 build/default/debug/pid.o
+.nbss               0x0850         0xa2
+ .nbss              0x0850         0x56 build/default/debug/pid.o
                     0x0850                  PID
                     0x0862                  newPID
                     0x0874                  errActual
@@ -1382,44 +1384,45 @@ __c30_signature
                     0x087c                  P_err
                     0x0880                  I_err
                     0x0884                  D_err
- .nbss              0x0888         0x26 build/default/debug/RS232.o
-                    0x0888                  nodeNumber
-                    0x088a                  RxData
-                    0x0898                  TxData
-                    0x08a6                  pTxData
-                    0x08a8                  ordenation
-                    0x08aa                  COM_error
-                    0x08ac                  test
- .nbss              0x08ae         0x1e build/default/debug/motorDriver.o
-                    0x08ae                  motorInfo
- .nbss              0x08cc          0x8 build/default/debug/PRAC4.o
-                    0x08cc                  L7_RxCOM
+                    0x0888                  Motor
+ .nbss              0x08a6         0x26 build/default/debug/RS232.o
+                    0x08a6                  nodeNumber
+                    0x08a8                  RxData
+                    0x08b6                  TxData
+                    0x08c4                  pTxData
+                    0x08c6                  ordenation
+                    0x08c8                  COM_error
+                    0x08ca                  test
+ .nbss              0x08cc         0x1e build/default/debug/motorDriver.o
+                    0x08cc                  motorInfo
+ .nbss              0x08ea          0x8 build/default/debug/PRAC4.o
+                    0x08ea                  L7_RxCOM
 
-.bss                0x08d4         0x12
- .bss               0x08d4         0x10 c:/program files (x86)/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(malloc.XXo)
-                    0x08d4                  _allocx
-                    0x08d8                  _alloct
-                    0x08da                  _allocp
-                    0x08dc                  _allocs
- .bss               0x08e4          0x2 c:/program files (x86)/microchip/mplab c30/bin/bin/../../lib\libpic30-coff.a(brk.o)
-                    0x08e4                  __curbrk
+.bss                0x08f2         0x12
+ .bss               0x08f2         0x10 c:/program files (x86)/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(malloc.XXo)
+                    0x08f2                  _allocx
+                    0x08f6                  _alloct
+                    0x08f8                  _allocp
+                    0x08fa                  _allocs
+ .bss               0x0902          0x2 c:/program files (x86)/microchip/mplab c30/bin/bin/../../lib\libpic30-coff.a(brk.o)
+                    0x0902                  __curbrk
 
-.heap               0x08e6        0x200
- .heap              0x08e6        0x200 heap
+.heap               0x0904        0x200
+ .heap              0x0904        0x200 heap
 
-_0379f85058d3f484
+_0390f85058da4787
                   0x0157fc          0x2
- _0379f85058d3f484
+ _0390f85058da4787
                   0x0157fc          0x2 build/default/debug/PRAC4.o
                   0x0157fc                  CONFIG2
 
-_0379f8c058d3f484
+_0390f8c058da4787
                   0x0157fe          0x2
- _0379f8c058d3f484
+ _0390f8c058da4787
                   0x0157fe          0x2 build/default/debug/PRAC4.o
                   0x0157fe                  CONFIG1
 
-.text             0x0007d8       0x11fc
+.text             0x0007d8       0x1236
  .text            0x0007d8        0x816 build/default/debug/RS232.o
                   0x0007d8                  _U2RXInterrupt
                   0x00083c                  _U2TXInterrupt
@@ -1442,7 +1445,7 @@ _0379f8c058d3f484
                   0x000fc2                  L2mac_getRxData
                   0x000fca                  L2mac_getTxData
                   0x000fd2                  L2mac_setCallBack
- .text            0x000fee        0x598 build/default/debug/motorDriver.o
+ .text            0x000fee        0x59e build/default/debug/motorDriver.o
                   0x000fee                  _T2Interrupt
                   0x001012                  MOTOR_pwmShapeUp
                   0x001042                  _OC1Interrupt
@@ -1462,20 +1465,20 @@ _0379f8c058d3f484
                   0x00138e                  MOTOR_getPosition
                   0x0013a6                  MOTOR_setFpwm
                   0x001414                  MOTOR_setDC
-                  0x0014b6                  MOTOR_setTsample
-                  0x00150a                  MOTOR_getInfo
-                  0x001554                  MOTOR_getTime
-                  0x00157c                  MOTOR_resetTime
- .text            0x001586        0x2c8 build/default/debug/PRAC4.o
-                  0x001586                  main
+                  0x0014bc                  MOTOR_setTsample
+                  0x001510                  MOTOR_getInfo
+                  0x00155a                  MOTOR_getTime
+                  0x001582                  MOTOR_resetTime
+ .text            0x00158c        0x2c2 build/default/debug/PRAC4.o
+                  0x00158c                  main
                   0x00180c                  L7_callBackCOM
- .text            0x00184e        0x186 build/default/debug/pid.o
+ .text            0x00184e        0x1c0 build/default/debug/pid.o
                   0x00184e                  setConsigna
                   0x001866                  setTipusControl
                   0x0018a4                  setConstants
                   0x0018f2                  ActualitzarPID
-                  0x001900                  errorResetPID
-                  0x001924                  controlPID
+                  0x00191a                  errorResetPID
+                  0x00193e                  controlPID
 
-.dinit            0x0019d4         0x26
- .dinit           0x0019d4         0x26 data_init
+.dinit            0x001a0e         0x26
+ .dinit           0x001a0e         0x26 data_init

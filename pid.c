@@ -7,6 +7,12 @@ ControladorPID PID, newPID;
 
 float errActual, errAnterior, P_err, I_err, D_err;
 
+MOTOR_INFO Motor;
+
+
+
+
+
 int setConsigna(float cons)
 {
 int status=0;
@@ -80,7 +86,12 @@ int setConstants(unsigned char s, float k)
 
 void ActualitzarPID()
 {    
-    PID = newPID;
+    //PID = newPID;
+    PID.tipuscontrol = 2;
+    PID.consigna = 360 * 100;
+    PID.P = 100;
+    PID.I = 10;
+    PID.D = 0;
    
 }
 
@@ -97,7 +108,10 @@ void errorResetPID()
 void controlPID()
 {
     
+
     errAnterior = errActual;
+    
+    MOTOR_getInfo(& Motor);
     
     switch(PID.tipuscontrol)
     {
@@ -110,13 +124,13 @@ void controlPID()
         case 1:
         {
               
-            errActual = PID.consigna - MOTOR_getVelocity();
+            errActual = PID.consigna - Motor.velocity;
             break;
         }
         
         case 2:
         {
-            errActual = PID.consigna - MOTOR_getPosition();
+            errActual = PID.consigna - Motor.position;
             break;
         }
         default:
@@ -128,12 +142,15 @@ void controlPID()
     
     
     P_err = errActual;
-    I_err += errAnterior;
-    D_err = errActual - errAnterior;
+    I_err += errActual * Motor.tsample;
+    D_err = (errActual - errAnterior) / Motor.tsample;
     
     float dc = PID.P*P_err + PID.I*I_err + PID.D*D_err;
-    int x = (int)dc; 
     
+    dc = dc / 100;
+    
+    int x = (int)dc; 
+    x = x >> 4;
     MOTOR_setDC((char) x);
     
 }
