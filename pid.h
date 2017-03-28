@@ -16,9 +16,11 @@ unsigned char
 
 float
         consigna,
-        P,
-        I,
-        D;
+        Kp,
+        Ki,
+        Kd,
+        Ti,
+        Td;
 
 
 }ControladorPID;

@@ -5,7 +5,7 @@
 
 ControladorPID PID, newPID;
 
-float errActual, errAnterior, P_err, I_err, D_err;
+float err, err1, P_err, I_err, D_err;
 
 MOTOR_INFO Motor;
 
@@ -58,17 +58,19 @@ int setConstants(unsigned char s, float k)
     {
         case 1:
         {
-            newPID.P=k;
+            newPID.Kp=k;
             break;
         }
         case 2:
         {
-            newPID.I=k;
+            newPID.Ti=k;
+            
             break;
         }
         case 3:
         {
-            newPID.D=k;
+            newPID.Td=k;
+            
             break;
         }
         default:
@@ -86,13 +88,21 @@ int setConstants(unsigned char s, float k)
 
 void ActualitzarPID()
 {    
-    //PID = newPID;
-    PID.tipuscontrol = 2;
-    PID.consigna = 360 * 100;
-    PID.P = 100;
-    PID.I = 10;
-    PID.D = 0;
-   
+    MOTOR_getInfo(& Motor);
+    
+    //------------------------------------
+    newPID.tipuscontrol = 1;
+    newPID.consigna = 2000;
+    newPID.Kp = 0.0005;
+    newPID.Ti = 0.01;
+    newPID.Td = 0;
+    //----------------------------------------
+    
+    if(newPID.Ti == 0) newPID.Ki = 0;
+    else newPID.Ki = newPID.Kp * (Motor.tsample/newPID.Ti);
+    if (newPID.Td == 0) newPID.Td = 0;
+    else newPID.Kd = newPID.Kp * (newPID.Td/Motor.tsample);       
+    PID = newPID;
 }
 
 void errorResetPID()
@@ -100,16 +110,14 @@ void errorResetPID()
     P_err = 0;
     I_err = 0;
     D_err = 0;
-    errActual = 0;
-    errAnterior = 0;
+    err = 0;
+    err1 = 0;
     
 }
 
 void controlPID()
 {
     
-
-    errAnterior = errActual;
     
     MOTOR_getInfo(& Motor);
     
@@ -124,13 +132,13 @@ void controlPID()
         case 1:
         {
               
-            errActual = PID.consigna - Motor.velocity;
+            err = PID.consigna - Motor.velocity;
             break;
         }
         
         case 2:
         {
-            errActual = PID.consigna - Motor.position;
+            err = PID.consigna - Motor.position;
             break;
         }
         default:
@@ -141,16 +149,31 @@ void controlPID()
     }
     
     
-    P_err = errActual;
-    I_err += errActual * Motor.tsample;
-    D_err = (errActual - errAnterior) / Motor.tsample;
+    P_err = err;
+    I_err += err;
+    D_err = (err - err1);
     
-    float dc = PID.P*P_err + PID.I*I_err + PID.D*D_err;
+    float dc = PID.Kp*P_err + PID.Ki*I_err + PID.Kd*D_err;
     
-    dc = dc / 100;
+     if(dc > 1 || dc < -1){ 
+         I_err -= err;
+         dc = PID.Kp*P_err + PID.Ki*I_err + PID.Kd*D_err;    
+     }
     
-    int x = (int)dc; 
-    x = x >> 4;
-    MOTOR_setDC((char) x);
+
+    
+       
+     err1 = err;
+    
+    //dc = dc / 100;
+    
+    //int x = (int)dc; 
+    //x = x >> 4;
+     
+    if(dc > 1) dc = 1;
+    else if (dc < -1) dc = -1;
+    dc *= 100;
+    //dc = 50;
+    MOTOR_setDC((char) dc);
     
 }

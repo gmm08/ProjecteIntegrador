@@ -355,7 +355,7 @@ if(dc==0) OC1RS=1; //no opera con 0x00
 else
 OC1RS=(int)((float)dc/(100.0*motorInfo.Fpwm*Tcy*8));
 OC1CON=5;			//dual continous mode, start
-PORTA=dc;
+PORTA = dc;
 return status;
 }
 
